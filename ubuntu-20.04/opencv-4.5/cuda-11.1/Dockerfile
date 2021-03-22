@@ -2,6 +2,8 @@ FROM nvidia/cuda:11.20-devel-ubuntu20.04
 
 ARG OPENCV_VERSION=4.5.0
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get upgrade -y &&\
     # Install build tools, build dependencies and python
     apt-get install -y \
@@ -41,8 +43,6 @@ RUN apt-get update && apt-get upgrade -y &&\
         python3-dev \
         python3-numpy \
     && rm -rf /var/lib/apt/lists/*
-
-RUN DEBIAN_FRONTEND=noninteractive apt install -y tzdata
 
 RUN cd /opt/ &&\
     # Download and unzip OpenCV and opencv_contrib and delte zip files
