@@ -42,6 +42,8 @@ RUN apt-get update && apt-get upgrade -y &&\
         python3-numpy \
     && rm -rf /var/lib/apt/lists/*
 
+RUN DEBIAN_FRONTEND=noninteractive apt install -y tzdata
+
 RUN cd /opt/ &&\
     # Download and unzip OpenCV and opencv_contrib and delte zip files
     wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.zip &&\
