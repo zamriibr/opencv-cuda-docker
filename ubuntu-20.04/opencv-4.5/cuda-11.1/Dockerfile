@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.2-devel-ubuntu20.04
+FROM nvidia/cuda:11.20-devel-ubuntu20.04
 
 ARG OPENCV_VERSION=4.5.0
 
